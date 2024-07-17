@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymGuru</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Página de Carga con Animación -->
+    <div id="carga" class="carga-container">
+        <img src="Designer (1).jpeg" alt="GymGuru Logo" class="logo">
+    </div>
+
+    <!-- Página de Inicio -->
+    <div id="inicio" class="container" style="display: none;">
+        <h1>Bienvenido a GymGuru</h1>
+        <button class="btn" onclick="mostrarLogin()">Comenzar</button>
+    </div>
+
+    <!-- Página de Inicio de Sesión -->
+    <div id="login" class="container" style="display: none;">
+        <button class="back-btn" onclick="mostrarInicio()">←</button>
+        <h1>Iniciar Sesión</h1>
+        <form onsubmit="handleLogin(); return false;">
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" required><br>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" required><br>
+            <button class="btn" type="submit">Iniciar Sesión</button>
+        </form>
+        <p>¿No tienes cuenta? <a href="#" onclick="mostrarRegistro()">Regístrate aquí</a></p>
+    </div>
+
+    <!-- Página de Registro - Correo -->
+    <div id="registroCorreo" class="container" style="display: none;">
+        <button class="back-btn" onclick="mostrarLogin()">←</button>
+        <h1>Registro</h1>
+        <form onsubmit="mostrarRegistroUsuario(); return false;">
+            <label for="nuevoEmail">Correo Electrónico:</label>
+            <input type="email" id="nuevoEmail" required><br>
+            <label for="nuevoPassword">Contraseña:</label>
+            <input type="password" id="nuevoPassword" required><br>
+            <label for="confirmarPassword">Confirmar Contraseña:</label>
+            <input type="password" id="confirmarPassword" required><br>
+            <p id="errorPassword" style="display: none; color: red;">Las contraseñas no coinciden.</p>
+            <button class="btn" type="submit">Siguiente</button>
+        </form>
+    </div>
+
+    <!-- Página de Registro - Usuario -->
+    <div id="registro" class="container" style="display: none;">
+        <button class="back-btn" onclick="mostrarRegistro()">←</button>
+        <h1>Registro de Usuario</h1>
+        <form onsubmit="handleRegister(); return false;">
+            <input type="hidden" id="registroEmail">
+            <input type="hidden" id="registroPassword">
+            <label for="nombre_completo">Nombre Completo:</label>
+            <input type="text" id="nombre_completo" required><br>
+            <label for="apodo">Apodo:</label>
+            <input type="text" id="apodo" required><br>
+            <label for="peso">Peso:</label>
+            <div class="peso-container">
+                <input type="number" id="peso" required>
+                <span class="unidad">kg</span>
+            </div>
+            <label for="altura">Altura:</label>
+            <div class="altura-container">
+                <input type="number" id="altura" required>
+                <span class="unidad">cm</span>
+            </div>
+            <button class="btn" type="submit">Registrarse</button>
+        </form>
+    </div>
+
+    <!-- Página de Actividades -->
+    <div id="actividades" class="container" style="display: none;">
+        <h1>¿Qué quieres entrenar?</h1>
+        <button class="btn" onclick="mostrarRutinas()">Gimnasia</button><br>
+        <button class="btn" onclick="mostrarEjercicios('Yoga')">Yoga</button>
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+        <div id="menu" class="menu" style="display: none;">
+            <button class="menu-option" onclick="mostrarPerfil()">Perfil</button>
+            <button class="menu-option" onclick="cerrarSesion()">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <!-- Página de Ejercicios -->
+    <div id="ejercicios" class="container" style="display: none;">
+        <button class="back-btn" onclick="regresar()">←</button>
+        <h1 id="actividad-titulo">Ejercicios</h1>
+        <p>Aquí van los ejercicios de la actividad seleccionada.</p>
+    </div>
+
+    <!-- Página de Rutinas de Gimnasio -->
+    <div id="rutinas" class="container" style="display: none;">
+        <button class="back-btn" onclick="regresar()">←</button>
+        <div id="main-container" class="container">
+            <h1>Rutinas de Gimnasio</h1>
+            <div class="level-selection">
+                <button class="level-btn" onclick="selectLevel('beginner')">Principiante</button>
+                <button class="level-btn" onclick="selectLevel('intermediate')">Intermedio</button>
+                <button class="level-btn" onclick="selectLevel('advanced')">Avanzado</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Página de Perfil -->
+    <div id="perfil" class="container" style="display: none;">
+        <button class="back-btn" onclick="mostrarActividades()">←</button>
+        <h1>Perfil de Usuario</h1>
+        <div class="profile-info">
+            <p>Nombre: <span id="perfil-nombre"></span></p>
+            <p>Apodo: <span id="perfil-apodo"></span></p>
+            <p>Email: <span id="perfil-email"></span></p>
+            <p>Peso: <span id="perfil-peso"></span> kg</p>
+            <p>Altura: <span id="perfil-altura"></span> cm</p>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

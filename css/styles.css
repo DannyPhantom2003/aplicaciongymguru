@@ -1,0 +1,256 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #171718, #1f2124, #6a6e73, #9fa3a9, #ff8c00);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: #f0f4f8;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Animación del fondo en movimiento */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Animación de latido para el logo */
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    25%, 75% {
+        transform: scale(1.1) rotate(90deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+}
+
+/* Animación de zoom */
+@keyframes zoomOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(3);
+    }
+}
+
+/* Contenedor de la página de carga */
+.carga-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background: #171718;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+/* Estilo del logo */
+.logo {
+    width: 150px;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+/* Estilo del contenedor principal */
+.container {
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilo de los encabezados */
+h1, h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #363636;
+}
+
+/* Estilo de los formularios */
+form {
+    display: inline-block;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo de las etiquetas de los formularios */
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+/* Estilo de los campos de entrada */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Estilo de los botones */
+button.btn, .level-btn, .day-btn, .control-btn {
+    background-color: #ff8c00;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+/* Efecto de hover en los botones */
+button.btn:hover, .level-btn:hover, .day-btn:hover, .control-btn:hover {
+    background-color: #e07b00;
+}
+
+/* Estilo de los botones de regreso */
+.back-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    transition: background-color 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #555;
+}
+
+/* Estilo del menú */
+.menu-btn {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transition: background-color 0.3s;
+}
+
+.menu-btn:hover {
+    background-color: #555;
+}
+
+.menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #171718;
+    border: 1px solid #333;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.menu-option {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+.menu-option:hover {
+    background-color: #555;
+}
+
+/* Estilo de los párrafos */
+p {
+    margin-top: 15px;
+}
+
+/* Estilo de los enlaces en los párrafos */
+p a {
+    color: #ff8c00;
+    text-decoration: none;
+}
+
+/* Contenedor del peso */
+.peso-container,
+.altura-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo de las unidades */
+.unidad {
+    margin-left: 5px;
+}
+
+/* Estilo del perfil */
+.profile-info {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: left;
+    margin-top: 20px;
+}
+
+/* Estilos adicionales para las rutinas */
+.level-selection, .routine-selection, .routine-preview {
+    margin-bottom: 20px;
+}
+
+.routine {
+    display: none;
+}
+
+.exercise {
+    margin: 20px 0;
+}
+
+.counter, .timer {
+    margin: 10px 0;
+}
+
+.button-group {
+    margin-top: 20px;
+}
+
+.message {
+    margin-top: 20px;
+    color: #4caf50;
+}
+
+/* Estilo de las imágenes de los ejercicios */
+.exercise-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
